@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Monolithic TODO</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app__header">
+        <p class="app__eyebrow">Monolithic Architecture Demo</p>
+        <h1>TODO Manager</h1>
+        <p class="app__subtitle">単一プロセスで API と UI をまとめたモノリシック構成です。</p>
+      </header>
+
+      <main class="app__main">
+        <form id="task-form" class="task-form">
+          <input
+            id="task-title"
+            type="text"
+            placeholder="やることを入力"
+            autocomplete="off"
+            required
+          />
+          <button type="submit">追加</button>
+        </form>
+
+        <section class="task-section">
+          <div class="task-section__header">
+            <h2>タスク一覧</h2>
+            <span id="task-count" class="task-count">0件</span>
+          </div>
+          <ul id="task-list" class="task-list"></ul>
+        </section>
+
+        <p id="status" class="status" role="status"></p>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
