@@ -55,6 +55,11 @@ def toggle_todo(todo_id: int) -> None:
         )
         conn.commit()
 
+def update_todo_title(todo_id: int, new_title: str) -> None:
+    with sqlite3.connect(DB_PATH) as conn:
+        conn.execute("UPDATE todos SET title = ? WHERE id = ?", (new_title, todo_id))
+        conn.commit()
+
 
 def delete_todo(todo_id: int) -> None:
     with sqlite3.connect(DB_PATH) as conn:
